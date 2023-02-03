@@ -2,7 +2,7 @@ name: Build dist
 run-name: ${{ github.actor }} is building 🚀
 on: [push]
 jobs:
-  Build coremltools:
+  Build-coremltools:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
