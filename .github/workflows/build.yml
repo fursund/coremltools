@@ -2,7 +2,7 @@ name: Build dist
 run-name: ${{ github.actor }} is building 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Build coremltools:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -21,7 +21,7 @@ jobs:
           activate-environment: true
       - name: Build coremltools
         shell: zsh {0}
-        run: which zsh && scripts/build.sh --num-procs=4 --python=$PYTHON --dist
+        run: which zsh && scripts/build.sh --num-procs=4 --python=3.8 --dist
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
