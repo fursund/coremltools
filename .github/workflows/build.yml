@@ -17,7 +17,7 @@ jobs:
           auto-update-conda: true
           python-version: "3.8"
           auto-activate-base: true
-          activate-environment: ""
+          activate-environment: true
       - name: Build coremltools
         shell: bash -el {0}
         run: zsh scripts/build.sh --num-procs=4 --python=$PYTHON --dist
