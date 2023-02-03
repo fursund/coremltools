@@ -22,6 +22,9 @@ jobs:
       - name: Build coremltools
         shell: zsh {0}
         run: which zsh && scripts/build.sh --num-procs=4 --python=$PYTHON --dist
-      - name: Conda list
-        shell: pwsh
-        run: conda list
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-wheel
+          path: |
+            build/dist/*.whl
