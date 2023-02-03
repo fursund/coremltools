@@ -20,8 +20,7 @@ jobs:
           activate-environment: true
       - name: Build coremltools
         shell: zsh {0}
-        run: which zsh
-        run: scripts/build.sh --num-procs=4 --python=$PYTHON --dist
+        run: which zsh && scripts/build.sh --num-procs=4 --python=$PYTHON --dist
       - name: Conda list
         shell: pwsh
         run: conda list
